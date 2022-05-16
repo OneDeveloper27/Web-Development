@@ -1,672 +1,676 @@
-<!DOCTYPE html>
-<!-- Building a Website -->
-<html lang="en">
+<?php
+includes_once = 'includes/db.con.php';
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Aplikasi P2 | Online</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <!-- IonIcons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-    <!-- summernote -->
-    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-    <!-- iCheck for checkboxes and radio inputs -->
-    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- Bootstrap Color Picker -->
-    <link rel="stylesheet" href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- Select2 -->
-    <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
-    <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-    <!-- Bootstrap4 Duallistbox -->
-    <link rel="stylesheet" href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
+    <!DOCTYPE html>
+    <!-- Building a Website -->
+    <html lang="en">
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-        <!-- Top Navbar -->
-        <nav class="main-header navbar navbar-expand-xl navbar-dark navbar-light">
-            <!-- Top navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link elevation-3" data-widget="pushmenu" href="#" role="button"><i
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Aplikasi P2 | Online</title>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+        <!-- IonIcons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Tempusdominus Bootstrap 4 -->
+        <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+        <!-- iCheck -->
+        <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+        <!-- JQVMap -->
+        <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        <!-- overlayScrollbars -->
+        <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+        <!-- Daterange picker -->
+        <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+        <!-- summernote -->
+        <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+        <!-- daterange picker -->
+        <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+        <!-- iCheck for checkboxes and radio inputs -->
+        <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+        <!-- Bootstrap Color Picker -->
+        <link rel="stylesheet" href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+        <!-- Tempusdominus Bbootstrap 4 -->
+        <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+        <!-- Select2 -->
+        <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+        <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+        <!-- Bootstrap4 Duallistbox -->
+        <link rel="stylesheet" href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    </head>
+
+    <body class="hold-transition sidebar-mini layout-fixed">
+        <div class="wrapper">
+            <!-- Top Navbar -->
+            <nav class="main-header navbar navbar-expand-xl navbar-dark navbar-light">
+                <!-- Top navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link elevation-3" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-block d-sm-inline-flexs">
-                    <a href="#" class="nav-link nav-pills elevation-5">Form Input Data</a>
-                </li>
-            </ul>
-    </div>
-
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-5">
-        <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
-            <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-5" style="opacity: .4">
-            <span class="brand-text font-weight-normal">Dokumen</span>
-        </a>
-        <!-- Left Sidebar -->
-        <div class="sidebar">
-            <!-- Sidebar Menu -->
-            <!-- Sidebar Kiri Bagian Tahun-->
-            <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column elevation-4" data-widget="treeview" role="menu" data-accordion="true">
-                    <!-- Add icons to the links using the .nav-icon class
-                            with font-awesome or any other icon font library -->
-                    <!-- Left Sidebar 0-->
-                    <li class="nav-item has-treeview menu-close">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-book"></i>
-                            <p>
-                                Data Tahun 2020
-                                <i class="right fas fa-angle-double-left"></i>
-                            </p>
-                        </a>
-                        <!-- Sidebar 1 Year -->
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Januari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Februari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Maret</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>April</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Mei</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juni</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juli</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Agustus</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>September</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Oktober</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>November</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Desember</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
-                    <!-- Left Sidebar 1-->
-                    <li class="nav-item has-treeview menu-close">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-book"></i>
-                            <p>
-                                Data Tahun 2021
-                                <i class="right fas fa-angle-double-left"></i>
-                            </p>
-                        </a>
-                        <!-- Sidebar 1 Year -->
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Januari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Februari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Maret</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>April</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Mei</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juni</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juli</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Agustus</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>September</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Oktober</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>November</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Desember</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Left Sidebar 2-->
-                    <li class="nav-item has-treeview menu-close">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-book"></i>
-                            <p>
-                                Data Tahun 2022
-                                <i class="right fas fa-angle-double-left"></i>
-                            </p>
-                        </a>
-                        <!-- Sidebar 1 Year -->
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Januari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Februari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Maret</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>April</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Mei</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juni</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juli</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Agustus</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>September</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Oktober</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>November</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Desember</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Left Sidebar 3-->
-                    <li class="nav-item has-treeview menu-close">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-book"></i>
-                            <p>
-                                Data Tahun 2023
-                                <i class="right fas fa-angle-double-left"></i>
-                            </p>
-                        </a>
-                        <!-- Sidebar 1 Year -->
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Januari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Februari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Maret</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>April</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Mei</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juni</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juli</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Agustus</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>September</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Oktober</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>November</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Desember</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Left Sidebar 4-->
-                    <li class="nav-item has-treeview menu-close">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-book"></i>
-                            <p>
-                                Data Tahun 2024
-                                <i class="right fas fa-angle-double-left"></i>
-                            </p>
-                        </a>
-                        <!-- Sidebar 1 Year -->
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Januari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Februari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Maret</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>April</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Mei</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juni</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juli</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Agustus</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>September</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Oktober</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>November</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Desember</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Left Sidebar 5-->
-                    <li class="nav-item has-treeview menu-close">
-                        <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-book"></i>
-                            <p>
-                                Data Tahun 2025
-                                <i class="right fas fa-angle-double-left"></i>
-                            </p>
-                        </a>
-                        <!-- Sidebar 1 Year -->
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Januari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Februari</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Maret</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>April</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Mei</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juni</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Juli</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Agustus</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>September</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Oktober</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>November</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <p>Desember</p>
-                                    <i class="far fa-circle-notch nav-icon"></i>
-                                </a>
-                            </li>
-                        </ul>
+                    <li class="nav-item d-block d-sm-inline-flexs">
+                        <a href="#" class="nav-link nav-pills elevation-5">Form Input Data</a>
                     </li>
                 </ul>
-            </nav>
         </div>
-    </aside>
 
-    <!-- Content Wrapper. Contains page content. -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page Header)-->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">Form</li>
-                        <li class="breadcrumb-item">Input Data</li>
-                    </ol>
-                </div>
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-5">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-5" style="opacity: .4">
+                <span class="brand-text font-weight-normal">Dokumen</span>
+            </a>
+            <!-- Left Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <!-- Sidebar Kiri Bagian Tahun-->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column elevation-4" data-widget="treeview" role="menu" data-accordion="true">
+                        <!-- Add icons to the links using the .nav-icon class
+                            with font-awesome or any other icon font library -->
+                        <!-- Left Sidebar 0-->
+                        <li class="nav-item has-treeview menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Data Tahun 2020
+                                    <i class="right fas fa-angle-double-left"></i>
+                                </p>
+                            </a>
+                            <!-- Sidebar 1 Year -->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Januari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Februari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Maret</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>April</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Mei</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juni</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juli</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Agustus</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>September</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Oktober</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>November</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Desember</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Left Sidebar 1-->
+                        <li class="nav-item has-treeview menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Data Tahun 2021
+                                    <i class="right fas fa-angle-double-left"></i>
+                                </p>
+                            </a>
+                            <!-- Sidebar 1 Year -->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Januari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Februari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Maret</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>April</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Mei</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juni</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juli</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Agustus</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>September</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Oktober</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>November</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Desember</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Left Sidebar 2-->
+                        <li class="nav-item has-treeview menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Data Tahun 2022
+                                    <i class="right fas fa-angle-double-left"></i>
+                                </p>
+                            </a>
+                            <!-- Sidebar 1 Year -->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Januari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Februari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Maret</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>April</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Mei</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juni</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juli</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Agustus</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>September</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Oktober</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>November</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Desember</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Left Sidebar 3-->
+                        <li class="nav-item has-treeview menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Data Tahun 2023
+                                    <i class="right fas fa-angle-double-left"></i>
+                                </p>
+                            </a>
+                            <!-- Sidebar 1 Year -->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Januari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Februari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Maret</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>April</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Mei</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juni</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juli</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Agustus</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>September</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Oktober</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>November</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Desember</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Left Sidebar 4-->
+                        <li class="nav-item has-treeview menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Data Tahun 2024
+                                    <i class="right fas fa-angle-double-left"></i>
+                                </p>
+                            </a>
+                            <!-- Sidebar 1 Year -->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Januari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Februari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Maret</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>April</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Mei</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juni</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juli</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Agustus</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>September</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Oktober</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>November</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Desember</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Left Sidebar 5-->
+                        <li class="nav-item has-treeview menu-close">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Data Tahun 2025
+                                    <i class="right fas fa-angle-double-left"></i>
+                                </p>
+                            </a>
+                            <!-- Sidebar 1 Year -->
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Januari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Februari</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Maret</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>April</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Mei</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juni</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Juli</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Agustus</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>September</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Oktober</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>November</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <p>Desember</p>
+                                        <i class="far fa-circle-notch nav-icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <!-- /.container-fluid -->
-        </section>
+        </aside>
 
-        <!-- Content (Page)-->
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
+        <!-- Content Wrapper. Contains page content. -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page Header)-->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">Form</li>
+                            <li class="breadcrumb-item">Input Data</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </section>
 
-                    <!-- Left Column -->
-                    <div class="col-md-6">
-                        <!-- Card Header 1 -->
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">Identitas Tersangka <i>( Suspect Identity )</i></h3>
+            <!-- Content (Page)-->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
 
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                        <!-- Left Column -->
+                        <div class="col-md-6">
+                            <!-- Card Header 1 -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Identitas Tersangka <i>( Suspect Identity )</i></h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                             class="fas fa-minus"></i></button>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Card 1 (Fill) -->
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Fill Form -->
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Nomor Identitas <i>( Identity Number )</i></label>
-                                            <input type="text number email" class="form-control" id="dataNomorIdentitasTersangka" placeholder="Nomor Identitas (NIK/No. Passport/NIB)">
+                                <!-- Card 1 (Fill) -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <!-- Fill Form -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Nomor Identitas <i>( Identity Number )</i></label>
+                                                <input type="text number email" class="form-control" id="dataNomorIdentitasTersangka" placeholder="Nomor Identitas (NIK/No. Passport/NIB)">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Nama Lengkap <i>( Full Name )</i></label>
-                                            <input type="text number email" class="form-control" id="dataNamaLengkapTersangka" placeholder="Muhammad Alfin Firdaus, Alfin Firdaus">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Nama Lengkap <i>( Full Name )</i></label>
+                                                <input type="text number email" class="form-control" id="dataNamaLengkapTersangka" placeholder="Muhammad Alfin Firdaus, Alfin Firdaus">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Tempat, Tanggal Lahir <i>( City and Date of Birth )</i></label>
-                                            <input type="text number email" class="form-control" id="dataTempatTanggalLahir" placeholder="Magelang, 27 April 2000">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Tempat, Tanggal Lahir <i>( City and Date of Birth )</i></label>
+                                                <input type="text number email" class="form-control" id="dataTempatTanggalLahir" placeholder="Magelang, 27 April 2000">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Jenis Kelamin <i>( Gender )</i></label>
-                                            <select class="select2bs4" multiple="multiple" style="width: 100%;" data-placeholder="-- Pilih Jenis Kelamin ( Select Gender ) --">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Jenis Kelamin <i>( Gender )</i></label>
+                                                <select class="select2bs4" multiple="multiple" style="width: 100%;" data-placeholder="-- Pilih Jenis Kelamin ( Select Gender ) --">
                                                 <option></option>
                                                 <option>Laki-laki <i>( Male )</i></option>
                                                 <option>Perempuan <i>( Female )</i></option>
                                                 <option>Badan Usaha</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Alamat Lengkap <i>( Full Address )</i></label>
-                                            <input type="text number email" class="form-control" id="dataAlamatLengkapTersangka" placeholder="Desa/Kampung, Kecamatan, Kabupaten, Provinsi">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Alamat Lengkap <i>( Full Address )</i></label>
+                                                <input type="text number email" class="form-control" id="dataAlamatLengkapTersangka" placeholder="Desa/Kampung, Kecamatan, Kabupaten, Provinsi">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group" id="country" name="country">
-                                            <label>Kewarganegaraan <i>( Nationality )</i></label>
-                                            <!-- List Country -->
-                                            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" id="country" name="country" tabindex="-1" aria-hidden="true" data-placeholder="-- Pilih Kewarganegaraan ( Select The Nationality ) --">
+                                        <div class="col-md-12">
+                                            <div class="form-group" id="country" name="country">
+                                                <label>Kewarganegaraan <i>( Nationality )</i></label>
+                                                <!-- List Country -->
+                                                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" id="country" name="country" tabindex="-1" aria-hidden="true" data-placeholder="-- Pilih Kewarganegaraan ( Select The Nationality ) --">
                                                 <option></option>
                                                 <option value="Indonesia">Indonesia</option>
                                                 <option value="Afghanistan">Afghanistan</option>
@@ -949,76 +953,77 @@
                                                 <option value="Zambia">Zambia</option>
                                                 <option value="Zimbabwe">Zimbabwe</option>
                                             </select>
+                                            </div>
                                         </div>
+
                                     </div>
+                                </div>
+                            </div>
+                            <!-- Card Header 2 -->
+                            <div class="card card-success">
+                                <div class="card-header">
+                                    <h3 class="card-title">Risalah Informasi</h3>
 
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                            class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <!-- Card 2 (Fill) -->
+                                <div class="card-body">
+                                    <div class="row">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Card Header 2 -->
-                        <div class="card card-success">
-                            <div class="card-header">
-                                <h3 class="card-title">Risalah Informasi</h3>
 
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                        <!-- Right Column -->
+                        <div class="col-md-6">
+                            <!-- Card Header 1 -->
+                            <div class="card card-danger">
+                                <div class="card-header">
+                                    <h3 class="card-title">Barang Hasil Penindakan</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                             class="fas fa-minus"></i></button>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Card 2 (Fill) -->
-                            <div class="card-body">
-                                <div class="row">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column -->
-                    <div class="col-md-6">
-                        <!-- Card Header 1 -->
-                        <div class="card card-danger">
-                            <div class="card-header">
-                                <h3 class="card-title">Barang Hasil Penindakan</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                            class="fas fa-minus"></i></button>
-                                </div>
-                            </div>
-                            <!-- Card 1 (Fill) -->
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Fill Form -->
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Detail Container / Kemasan <i>( Container / Packaging Detail
+                                <!-- Card 1 (Fill) -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <!-- Fill Form -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Detail Container / Kemasan <i>( Container / Packaging Detail
                                                     )</i></label>
-                                            <input type="text number email" class="form-control" id="dataKemasan" placeholder="Jumlah, Jenis, Ukuran, dan Nomor Petikemas (20 Buah Petikemas Beku Ukuran 20 feet) | Kemasan (1 Karung) ">
+                                                <input type="text number email" class="form-control" id="dataKemasan" placeholder="Jumlah, Jenis, Ukuran, dan Nomor Petikemas (20 Buah Petikemas Beku Ukuran 20 feet) | Kemasan (1 Karung) ">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Detail Barang <i>( Goods Details )</i></label>
-                                            <input type="text number email" class="form-control" id="dataBarang" placeholder="200 Ton Ganja (Cannabis Sativa); atau 1000 Liter MMEA (Vodka dan Wine)">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Detail Barang <i>( Goods Details )</i></label>
+                                                <input type="text number email" class="form-control" id="dataBarang" placeholder="200 Ton Ganja (Cannabis Sativa); atau 1000 Liter MMEA (Vodka dan Wine)">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Dokumen yang menyertai Barang <i>( Goods Documents )</i></label>
-                                            <input type="text number email" class="form-control" id="dataDokumenBarang" placeholder="BC 1.1 (Inward Manifest); atau CK-5 (BKC); PIB000001; dan PEB000001">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Dokumen yang menyertai Barang <i>( Goods Documents )</i></label>
+                                                <input type="text number email" class="form-control" id="dataDokumenBarang" placeholder="BC 1.1 (Inward Manifest); atau CK-5 (BKC); PIB000001; dan PEB000001">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- Date Form -->
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <label>Tanggal Dokumen yang menyertai Barang <i>( Goods Document Date
+                                        <!-- Date Form -->
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>Tanggal Dokumen yang menyertai Barang <i>( Goods Document Date
                                                     )</i>
                                                 :</label>
-                                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate">
-                                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                                    <div class="input-group-text"><i class="fa fa-calendar"></i>
+                                                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                                    <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate">
+                                                    <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="fa fa-calendar"></i>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1026,89 +1031,88 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Card Header 2-->
-                        <div class="card card-success">
-                            <div class="card-header">
-                                <h3 class="card-title">Risalah Penindakan</h3>
+                            <!-- Card Header 2-->
+                            <div class="card card-success">
+                                <div class="card-header">
+                                    <h3 class="card-title">Risalah Penindakan</h3>
 
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                             class="fas fa-minus"></i></button>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Card 2 (Fill) -->
-                            <div class="card-body">
-                                <div class="row">
+                                <!-- Card 2 (Fill) -->
+                                <div class="card-body">
+                                    <div class="row">
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+        </div>
+        <!-- Container Fluid -->
+        </section>
+        </div>
 
-            </div>
-    </div>
-    <!-- Container Fluid -->
-    </section>
-    </div>
+        <!-- SCRIPT -->
+        <!-- jQuery -->
+        <script src="plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="dist/js/adminlte.min.js"></script>
+        <!-- bs-custom-file-input -->
+        <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+        <!-- Select2 -->
+        <script src="plugins/select2/js/select2.full.min.js"></script>
+        <!-- Bootstrap4 Duallistbox -->
+        <script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+        <!-- InputMask -->
+        <script src="plugins/moment/moment.min.js"></script>
+        <script src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+        <!-- date-range-picker -->
+        <script src="plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- bootstrap color picker -->
+        <script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- Bootstrap Switch -->
+        <script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="dist/js/demo.js"></script>
+        <!-- Page script -->
+        <script>
+            $(function () {
+                //Initialize Select2 Elements
+                $('.select2').select2()
 
-    <!-- SCRIPT -->
-    <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.min.js"></script>
-    <!-- bs-custom-file-input -->
-    <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-    <!-- Select2 -->
-    <script src="plugins/select2/js/select2.full.min.js"></script>
-    <!-- Bootstrap4 Duallistbox -->
-    <script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
-    <!-- InputMask -->
-    <script src="plugins/moment/moment.min.js"></script>
-    <script src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
-    <!-- date-range-picker -->
-    <script src="plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- bootstrap color picker -->
-    <script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Bootstrap Switch -->
-    <script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
-    <!-- Page script -->
-    <script>
-        $(function() {
-            //Initialize Select2 Elements
-            $('.select2').select2()
+                //Initialize Select2 Elements
+                $('.select2bs4').select2({
+                    theme: 'bootstrap4'
+                })
 
-            //Initialize Select2 Elements
-            $('.select2bs4').select2({
-                theme: 'bootstrap4'
-            })
-
-            //Datemask dd/mm/yyyy
-            $('#datemask').inputmask('dd/mm/yyyy', {
+                //Datemask dd/mm/yyyy
+                $('#datemask').inputmask('dd/mm/yyyy', {
                     'placeholder': 'dd/mm/yyyy'
                 })
                 //Datemask2 mm/dd/yyyy
-            $('#datemask2').inputmask('mm/dd/yyyy', {
+                $('#datemask2').inputmask('mm/dd/yyyy', {
                     'placeholder': 'mm/dd/yyyy'
                 })
                 //Money Euro
-            $('[data-mask]').inputmask()
+                $('[data-mask]').inputmask()
 
-            //Date range picker
-            $('#reservationdate').datetimepicker({
-                format: 'L'
-            });
-            //Date range picker
-            $('#reservation').daterangepicker()
+                //Date range picker
+                $('#reservationdate').datetimepicker({
+                    format: 'L'
+                });
+                //Date range picker
+                $('#reservation').daterangepicker()
                 //Date range picker with time picker
-            $('#reservationtime').daterangepicker({
+                $('#reservationtime').daterangepicker({
                     timePicker: true,
                     timePickerIncrement: 30,
                     locale: {
@@ -1116,7 +1120,7 @@
                     }
                 })
                 //Date range as a button
-            $('#daterange-btn').daterangepicker({
+                $('#daterange-btn').daterangepicker({
                     ranges: {
                         'Today': [moment(), moment()],
                         'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
@@ -1128,37 +1132,38 @@
                     startDate: moment().subtract(29, 'days'),
                     endDate: moment()
                 },
-                function(start, end) {
-                    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-                }
-            )
+                    function (start, end) {
+                        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+                    }
+                )
 
-            //Timepicker
-            $('#timepicker').datetimepicker({
-                format: 'LT'
-            })
+                //Timepicker
+                $('#timepicker').datetimepicker({
+                    format: 'LT'
+                })
 
-            //Bootstrap Duallistbox
-            $('.duallistbox').bootstrapDualListbox()
+                //Bootstrap Duallistbox
+                $('.duallistbox').bootstrapDualListbox()
 
-            //Colorpicker
-            $('.my-colorpicker1').colorpicker()
+                //Colorpicker
+                $('.my-colorpicker1').colorpicker()
                 //color picker with addon
-            $('.my-colorpicker2').colorpicker()
+                $('.my-colorpicker2').colorpicker()
 
-            $('.my-colorpicker2').on('colorpickerChange', function(event) {
-                $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
-            });
+                $('.my-colorpicker2').on('colorpickerChange', function (event) {
+                    $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+                });
 
-            $("input[data-bootstrap-switch]").each(function() {
-                $(this).bootstrapSwitch('state', $(this).prop('checked'));
-            });
+                $("input[data-bootstrap-switch]").each(function () {
+                    $(this).bootstrapSwitch('state', $(this).prop('checked'));
+                });
 
-        })
-    </script>
-    <!-- SCRIPT -->
-</body>
+            })
+        </script>
+        <!-- SCRIPT -->
+    </body>
 
-</html>
+    </html>
 
-jdbc:mysql://localhost:3306/?user=root
+    jdbc:mysql://localhost:3306/?user=root
+?>
