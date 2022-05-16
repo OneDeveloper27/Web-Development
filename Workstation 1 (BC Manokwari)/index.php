@@ -1,5 +1,5 @@
 <?php
-mysqli_connect("127.0.0.1","root","Shut.Up.05","learning_databases")
+mysqli_connect("localhost","root","Shut.Up.05","learning_databases")
     $host="127.0.0.1";
     $port=3306; $socket="";
     $user="root";
