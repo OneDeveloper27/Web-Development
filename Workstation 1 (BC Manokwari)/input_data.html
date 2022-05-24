@@ -1,6 +1,6 @@
 <?php
 includes_once = 'includes/db.con.php';
-
+?>
 
     <!DOCTYPE html>
     <!-- Building a Website -->
@@ -1085,7 +1085,7 @@ includes_once = 'includes/db.con.php';
         <script src="dist/js/demo.js"></script>
         <!-- Page script -->
         <script>
-            $(function () {
+            $(function() {
                 //Initialize Select2 Elements
                 $('.select2').select2()
 
@@ -1096,13 +1096,13 @@ includes_once = 'includes/db.con.php';
 
                 //Datemask dd/mm/yyyy
                 $('#datemask').inputmask('dd/mm/yyyy', {
-                    'placeholder': 'dd/mm/yyyy'
-                })
-                //Datemask2 mm/dd/yyyy
+                        'placeholder': 'dd/mm/yyyy'
+                    })
+                    //Datemask2 mm/dd/yyyy
                 $('#datemask2').inputmask('mm/dd/yyyy', {
-                    'placeholder': 'mm/dd/yyyy'
-                })
-                //Money Euro
+                        'placeholder': 'mm/dd/yyyy'
+                    })
+                    //Money Euro
                 $('[data-mask]').inputmask()
 
                 //Date range picker
@@ -1111,28 +1111,28 @@ includes_once = 'includes/db.con.php';
                 });
                 //Date range picker
                 $('#reservation').daterangepicker()
-                //Date range picker with time picker
+                    //Date range picker with time picker
                 $('#reservationtime').daterangepicker({
-                    timePicker: true,
-                    timePickerIncrement: 30,
-                    locale: {
-                        format: 'DD/MM/YYYY hh:mm A'
-                    }
-                })
-                //Date range as a button
+                        timePicker: true,
+                        timePickerIncrement: 30,
+                        locale: {
+                            format: 'DD/MM/YYYY hh:mm A'
+                        }
+                    })
+                    //Date range as a button
                 $('#daterange-btn').daterangepicker({
-                    ranges: {
-                        'Today': [moment(), moment()],
-                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                        'This Month': [moment().startOf('month'), moment().endOf('month')],
-                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                        ranges: {
+                            'Today': [moment(), moment()],
+                            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                            'This Month': [moment().startOf('month'), moment().endOf('month')],
+                            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                        },
+                        startDate: moment().subtract(29, 'days'),
+                        endDate: moment()
                     },
-                    startDate: moment().subtract(29, 'days'),
-                    endDate: moment()
-                },
-                    function (start, end) {
+                    function(start, end) {
                         $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
                     }
                 )
@@ -1147,14 +1147,14 @@ includes_once = 'includes/db.con.php';
 
                 //Colorpicker
                 $('.my-colorpicker1').colorpicker()
-                //color picker with addon
+                    //color picker with addon
                 $('.my-colorpicker2').colorpicker()
 
-                $('.my-colorpicker2').on('colorpickerChange', function (event) {
+                $('.my-colorpicker2').on('colorpickerChange', function(event) {
                     $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
                 });
 
-                $("input[data-bootstrap-switch]").each(function () {
+                $("input[data-bootstrap-switch]").each(function() {
                     $(this).bootstrapSwitch('state', $(this).prop('checked'));
                 });
 
@@ -1166,4 +1166,3 @@ includes_once = 'includes/db.con.php';
     </html>
 
     jdbc:mysql://localhost:3306/?user=root
-?>
